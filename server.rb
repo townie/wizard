@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'csv'
 require_relative 'lib/Article_helper'
-
+require 'pry'
 
 
 get '/' do
@@ -23,7 +23,6 @@ end
 
 get '/:article' do
   wizposts = ArticleLoader.new.build
-  @posts= [ArticleSelector.new(wizposts).get_post_by_url(params[:article])]
-
+  @posts= [(ArticleSelector.new(wizposts).get_post_by_url(params[:article]))]
   erb :article
 end

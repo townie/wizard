@@ -1,6 +1,6 @@
 require_relative 'article_helper'
 require 'csv'
-
+require 'open-uri'
 
 class WizardArticle
 
@@ -18,5 +18,6 @@ class WizardArticle
     end
     'success'
   end
+
 
 end
