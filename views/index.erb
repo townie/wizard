@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Home Page </title>
+  </head>
+  <body>
+      <h1> Welcome to Wizardy stuff </h1>
+
+    <ul>
+      <li>
+        <a href = "/show_all"> Articles</a>
+      </li>
+      <li>
+        <a href = "/"> Home</a>
+      </li>
+    </ul>
+
+
+
+      <form action='/article_create' method='post'>
+
+          <div style="padding:20px">
+            <label for = 'title'>Title</label>
+            <input type='text' name='title' id='title'/>
+          </div>
+          <div style="padding:20px">
+            <label for = 'url'>URL</label>
+            <input type='text' name='url' id='url'/>
+          </div>
+          <div style="padding:20px">
+            <label for = 'article'>Article</label>
+            <textarea type='text' name='article' id='article' maxlength='250' rows='10'></textarea>
+          </div>
+          <input type='submit'/>
+
+      </form>
+      <h3> Recent Post </h3>
+      <% if !@post.nil? %>
+        <h2> Title: <%= @post.title %></h2>
+         <br/>
+          <%= @post.url %> <br />
+          <%= @post.article %>
+      <% end %>
+
+  </body>
+
+</html
